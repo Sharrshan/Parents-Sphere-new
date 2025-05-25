@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Counsellor Session with ParentSphere</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+        }
+        .counsellor {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .counsellor h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .counsellor p {
+            margin: 5px 0;
+        }
+        .book-btn {
+            background-color: #4CAF50;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .book-btn:hover {
+            background-color: #45a049;
+        }
+        .confirmation {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Book a Counsellor Session with ParentSphere</h1>
+
+    <div id="counsellors">
+        <!-- Counsellor Profiles -->
+        <div class="counsellor">
+            <h2>Bharati K Trivedi</h2>
+            <p>Rating: 4.8</p>
+            <p>Reviews: 150</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.880</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Bharati K Trivedi')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Dr. Shailaja Pokhriyal</h2>
+            <p>Rating: 4.7</p>
+            <p>Reviews: 120</p>
+            <p>Consultancy Fee(inclusive of all taxes):Rs.850 </p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Dr. Shailaja Pokhriyal')">Book</button></a>
+        </div>
+        <!-- Add 8 more counsellor profiles here -->
+        <!-- For simplicity, I'll add the remaining counsellors without specific details -->
+        <div class="counsellor">
+            <h2>Amrita Singh</h2>
+            <p>Rating: 4.9</p>
+            <p>Reviews: 180</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.1000</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Amrita Singh')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Ajit Dandekar</h2>
+            <p>Rating: 4.6</p>
+            <p>Reviews: 100</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.820</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Ajit Dandekar')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Dr. Vipul Rastogi</h2>
+            <p>Rating: 4.5</p>
+            <p>Reviews: 90</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.750</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Dr. Vipul Rastogi')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Kamna Chibber</h2>
+            <p>Rating: 4.4</p>
+            <p>Reviews: 85</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.700</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Kamna Chibber')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Pooja Bhatia</h2>
+            <p>Rating: 4.3</p>
+            <p>Reviews: 95</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.680</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Pooja Bhatia')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Preetika Sharma</h2>
+            <p>Rating: 4.2</p>
+            <p>Reviews: 80</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.600</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Preetika Sharma')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Rahul Dasondi</h2>
+            <p>Rating: 4.1</p>
+            <p>Reviews: 70</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.550</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Rahul Dasondi')">Book</button></a>
+        </div>
+        <div class="counsellor">
+            <h2>Dr. Prerna Kohli</h2>
+            <p>Rating: 4.0</p>
+            <p>Reviews: 60</p>
+            <p>Consultancy Fee(inclusive of all taxes): Rs.500</p>
+            <a href="#confirmation"><button class="book-btn" onclick="bookCounsellor('Dr. Prerna Kohli')">Book</button></a>
+        </div>
+    </div>
+
+    <div id="confirmation" class="confirmation">
+        Booking done under the prescribed slot.
+    </div>
+
+    <script>
+        function bookCounsellor(counsellorName) {
+            document.getElementById('confirmation').style.display = 'block';
+            document.getElementById('confirmation').innerHTML = 'Booking done under the prescribed slot for ' + counsellorName +','+ ' .';
+        }
+    </script>
+
+</body>
+</html>

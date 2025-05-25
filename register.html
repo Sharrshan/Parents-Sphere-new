@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module" src="register.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        #logo
+        {
+            height: 150px;
+            width: 150px;
+            position: fixed;
+            top: 0%;
+            left: 10%;
+            display: inline-block;
+            background-image: url(IMG_20240611_111340.jpg);
+            background-size: contain;
+        }
+        #slogan
+        {
+            position: relative;
+            left:220%;
+            top: -20%;
+            color: white;
+            font-size: 30px;
+            display: inline-block;
+            width: 2000px;
+        }
+        header
+        {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+        }
+        .container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <p id="slogan">"The Sphere of Support for Modern Parents"</p>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="register.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+           
+           <!-- <a href="index.html">-->
+            <button id="submitSignUp" name="SignUp"> Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
