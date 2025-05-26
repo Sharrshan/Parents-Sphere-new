@@ -3,110 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParentSphere - Parent Counseling App</title>
+    <title>ParentSphere</title>
     <link rel="stylesheet" href="styles1.css">
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">ParentSphere</div>
-            <ul class="nav-links">
-                <li><a href="#home" class="button">Home</a></li>
-                <li><a href="#about" class="button">About</a></li>
-                <li><a href="#features" class="button">Features</a></li>
-                <li><a href="#contact" class="button">Contact</a></li>
-                <li><a href="register.html" class="button">Register</a></li>
-                
-                <li><a href="https://www.youtube.com/watch?v=5nBYCHRbOZA&t=2s" class="button" target="_blank">Vitalizing Path</a></li>
-                <li><a href="https://parentselfcare.com/blog/an-introduction-to-mindfulness-for-busy-parents-get-your-free-ebook" class="button" target="_blank">Free Book</a></li>
-                <li><a href="bookappointment.html" class="button" target="_blank">Book Appointment</a></li>
-                <li><button class="button logout-btn" onclick="confirmLogout()">Logout</button></li>
-
-                    <script>
-                        function confirmLogout() {
-                            var confirmation = confirm("Are you sure you want to logout?");
-                            if (confirmation) {
-                                // Redirect to login page
-                                window.location.href = "index.html";
-                            } else {
-                                // Stay on the current page
-                                // Do nothing
-                            }
-                        }
-                    </script>
-            </ul>
-        </nav>
+        <div class="logo">ParentSphere</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="bookappointment.html">Book Appointment</a></li>
+            <li><a href="#" id="logout" class="button">Logout</a></li>
+        </ul>
     </header>
 
-    <section id="home">
-        <div class="hero">
-            <h1>Welcome to ParentSphere</h1>
-            <p>Your trusted partner in parenting.</p>
-            <a href="#features" class="cta-button">Learn More</a>
-        </div>
+    <section class="hero" id="home">
+        <h1>Welcome to ParentSphere, <span id="loggedUserFName"></span></h1>
+        <p>Your trusted partner in parenting. Email: <span id="loggedUserEmail"></span></p>
+        <a href="#about" class="cta-button">Learn More</a>
     </section>
-    <hr>
-    <hr>
+
     <section id="about">
         <h2>About Us</h2>
-        <p>Welcome to ParentSphere – your trusted partner in the journey of parenthood. At ParentSphere, we believe that raising children is one of life’s most rewarding experiences, but we also understand the challenges and uncertainties that come with it. Our mission is to empower parents with the knowledge, support, and resources they need to navigate these challenges confidently and effectively.
-
-            Our Mission-
-            ParentSphere is dedicated to providing accessible, expert counselling and resources to parents everywhere. We aim to create a supportive community where parents can find the guidance they need to foster healthy, happy, and well-rounded children. Our goal is to make professional counselling services available to all parents, ensuring that they never have to face the complexities of parenting alone.
-        </p>
+        <p>Welcome to ParentSphere – your trusted partner in the journey of parenthood. At ParentSphere, we believe that raising children is one of life’s most rewarding experiences, but we also understand the challenges and uncertainties that come with it. Our mission is to empower parents with the knowledge, support, and resources they need to navigate these challenges confidently and effectively.</p>
+        <p><strong>Our Mission:</strong> ParentSphere is dedicated to providing accessible, expert counselling and resources to parents everywhere. We aim to create a supportive community where parents can find the guidance they need to foster healthy, happy, and well-rounded children. Our goal is to make professional counselling services available to all parents, ensuring that they never have to face the complexities of parenting alone.</p>
     </section>
-    <hr>
-    <hr>
+
     <section id="features">
         <h2>Features</h2>
         <div class="feature">
-            <h3>Expert Counsellors: Our team of certified parenting counsellors and child psychologists is here to provide personalized advice and support tailored to your unique family situation.
-                Comprehensive Resources: Access a vast library of articles, videos, and guides on various parenting topics, from early childhood development to teen issues.
-                Flexible Scheduling: Book counselling sessions at your convenience with flexible scheduling options, including evenings and weekends.
-                Community Support: Join our community forums to connect with other parents, share experiences, and gain insights from diverse perspectives.
-                Confidential and Secure: Your privacy is our priority. All interactions on ParentSphere are confidential and secure, ensuring a safe environment for you to seek support.</h3>
-            <p></p>
+            <h3>Expert Counsellors</h3>
+            <p>Our team of certified parenting counsellors and child psychologists is here to provide personalized advice and support tailored to your unique family situation.</p>
         </div>
-        <hr>
         <div class="feature">
-            <h3>Our Values</h3>
-            <p>Empathy: We approach every parent with understanding and compassion, recognizing the unique challenges each family faces.
-                
-                Expertise: Our counsellors are highly trained professionals with extensive experience in child development and family dynamics.
-                Accessibility: We strive to make our services available to all parents, regardless of location or financial situation.
-                Support: We believe in the power of community and provide a platform where parents can support each other.</p>
+            <h3>Comprehensive Resources</h3>
+            <p>Access a vast library of articles, videos, and guides on various parenting topics, from early childhood development to teen issues.</p>
         </div>
-        <hr>
         <div class="feature">
-            <h3>Why choose ParentSphere?</h3>
-            <p>Choosing ParentSphere means choosing a partner in your parenting journey. We are committed to helping you raise confident, resilient, and happy children. With ParentSphere, you have a dedicated support system that is just a click away, ready to assist you with any parenting challenges you may face.</p>
+            <h3>Flexible Scheduling</h3>
+            <p>Book counselling sessions at your convenience with flexible scheduling options, including evenings and weekends.</p>
+        </div>
+        <div class="feature">
+            <h3>Community Support</h3>
+            <p>Join our community forums to connect with other parents, share experiences, and gain insights from diverse perspectives.</p>
+        </div>
+        <div class="feature">
+            <h3>Confidential and Secure</h3>
+            <p>Your privacy is our priority. All interactions on ParentSphere are confidential and secure, ensuring a safe environment for you to seek support.</p>
         </div>
     </section>
-    <hr>
-    <hr>
+
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Have questions or need support? Reach out to us!</p>
-        <form action="/contact" method="post">
-            <div class="input-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="contact-button">Send Message</button>
-        </form>
+        <div class="input-group">
+            <input type="text" placeholder="Name">
+        </div>
+        <div class="input-group">
+            <input type="email" placeholder="Email">
+        </div>
+        <div class="input-group">
+            <textarea placeholder="Message"></textarea>
+        </div>
+        <button class="contact-button">Send Message</button>
     </section>
-    <hr>
-    <hr>
+
     <footer>
-        <p>&copy; 2024 ParentSphere. All rights reserved.</p>
+        <p>© 2025 ParentSphere. All rights reserved.</p>
     </footer>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBIQaVTUs0Civ80RXYFrkm1T8AHP9vtFTI",
+            authDomain: "parents-sphere-ffcfc.firebaseapp.com",
+            projectId: "parents-sphere-ffcfc",
+            storageBucket: "parents-sphere-ffcfc.firebasestorage.app",
+            messagingSenderId: "883884956220",
+            appId: "1:883884956220:web:818a0b458e2995fa554139"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        firebase.auth().onAuthStateChanged((user) => {
+            const loggedInUserId = localStorage.getItem('loggedInUserId');
+            if (loggedInUserId) {
+                const docRef = db.collection("users").doc(loggedInUserId);
+                docRef.get()
+                    .then((docSnap) => {
+                        if (docSnap.exists()) {
+                            const userData = docSnap.data();
+                            document.getElementById('loggedUserFName').innerText = userData.firstName;
+                            document.getElementById('loggedUserEmail').innerText = userData.email;
+                        } else {
+                            console.log("No document found matching id");
+                        }
+                    })
+                    .catch((error) => {
+                        console.log("Error getting document:", error);
+                    });
+            } else {
+                console.log("User ID not found in local storage");
+                window.location.href = 'index1.html'; // Redirect to login if not authenticated
+            }
+        });
+
+        const logoutButton = document.getElementById('logout');
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('loggedInUserId');
+            auth.signOut()
+                .then(() => {
+                    window.location.href = 'index1.html';
+                })
+                .catch((error) => {
+                    console.error('Error signing out:', error);
+                });
+        });
+    </script>
 </body>
 </html>
