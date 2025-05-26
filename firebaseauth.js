@@ -1,6 +1,5 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, createUser WithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -36,7 +35,7 @@ signUp.addEventListener('click', (event) => {
     const auth = getAuth();
     const db = getFirestore();
 
-    createUser WithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             const userData = {
@@ -48,18 +47,18 @@ signUp.addEventListener('click', (event) => {
             const docRef = doc(db, "users", user.uid);
             setDoc(docRef, userData)
                 .then(() => {
-                    window.location.href = 'index1.html'; // Redirect to login page
+                    window.location.href = 'home.html'; // Redirect to home.html after sign-up
                 })
                 .catch((error) => {
-                    console.error("error writing document", error);
+                    console.error("Error writing document", error);
                 });
         })
         .catch((error) => {
             const errorCode = error.code;
             if (errorCode == 'auth/email-already-in-use') {
-                showMessage('Email Address Already Exists !!!', 'signUpMessage');
+                showMessage('Email Address Already Exists!', 'signUpMessage');
             } else {
-                showMessage('Unable to create User', 'signUpMessage');
+                showMessage('Unable to create user', 'signUpMessage');
             }
         });
 });
@@ -75,15 +74,15 @@ signIn.addEventListener('click', (event) => {
         .then((userCredential) => {
             showMessage('Login is successful', 'signInMessage');
             const user = userCredential.user;
-            localStorage.setItem('loggedInUser Id', user.uid);
-            window.location.href = 'home.html'; // Redirect to ParentSphere homepage
+            localStorage.setItem('loggedInUserId', user.uid);
+            window.location.href = 'home.html'; // Redirect to home.html after sign-in
         })
         .catch((error) => {
             const errorCode = error.code;
             if (errorCode === 'auth/invalid-credential') {
                 showMessage('Incorrect Email or Password', 'signInMessage');
             } else {
-                showMessage('Account does not Exist', 'signInMessage');
+                showMessage('Account does not exist', 'signInMessage');
             }
         });
 });
