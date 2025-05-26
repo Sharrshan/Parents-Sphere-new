@@ -3,12 +3,12 @@ import {getAuth, onAuthStateChanged, signOut} from "https://www.gstatic.com/fire
 import{getFirestore, getDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBIQaVTUs0Civ80RXYFrkm1T8AHP9vtFTI",
-    authDomain: "parents-sphere-ffcfc.firebaseapp.com",
-    projectId: "parents-sphere-ffcfc",
-    storageBucket: "parents-sphere-ffcfc.firebasestorage.app",
-    messagingSenderId: "883884956220",
-    appId: "1:883884956220:web:818a0b458e2995fa554139"
+    apiKey: "AIzaSyDTy0oljkT7P8VBfzfrA9ztVZ6lFpGNa50",
+  authDomain: "parent-sphere-new.firebaseapp.com",
+  projectId: "parent-sphere-new",
+  storageBucket: "parent-sphere-new.firebasestorage.app",
+  messagingSenderId: "2055683225",
+  appId: "1:2055683225:web:e554fda95ec02f73ea8c08"
   };
  
   // Initialize Firebase
