@@ -5,12 +5,12 @@
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBhQNQ4Pf8GLFkgWA7p6QbuArgKTXQB4O4",
-    authDomain: "parent-sphere.firebaseapp.com",
-    projectId: "parent-sphere",
-    storageBucket: "parent-sphere.firebasestorage.app",
-    messagingSenderId: "52658078544",
-    appId: "1:52658078544:web:337ed739d4bed5b0886255"
+    apiKey: "AIzaSyDTy0oljkT7P8VBfzfrA9ztVZ6lFpGNa50",
+    authDomain: "parent-sphere-new.firebaseapp.com",
+    projectId: "parent-sphere-new",
+    storageBucket: "parent-sphere-new.firebasestorage.app",
+    messagingSenderId: "2055683225",
+    appId: "1:2055683225:web:e554fda95ec02f73ea8c08"
   };
 
   // Initialize Firebase
